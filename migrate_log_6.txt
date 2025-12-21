@@ -1,0 +1,26 @@
+Migrating: 2025_11_28_000003_add_is_active_to_products_table
+Migrated:  2025_11_28_000003_add_is_active_to_products_table (34.88ms)
+Migrating: 2025_11_28_000004_add_license_fields_to_licenses_table
+Migrated:  2025_11_28_000004_add_license_fields_to_licenses_table (97.10ms)
+Migrating: 2025_11_28_000005_add_missing_fields_to_products_table
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'short_description' (SQL: alter table `products` add `short_description` varchar(255) null after `description`, add `version` varchar(255) not null default '1.0.0' after `short_description`, add `tested_up_to` varchar(255) null after `version`, add `requires_php` varchar(255) not null default '7.4' after `tested_up_to`, add `requires_wordpress` varchar(255) not null default '5.0' after `requires_php`, add `banner_image` varchar(255) null after `file_path`, add `icon_image` varchar(255) null after `banner_image`, add `changelog` text null after `icon_image`, add `documentation_url` varchar(255) null after `changelog`, add `github_url` varchar(255) null after `documentation_url`, add `support_url` varchar(255) null after `github_url`, add `default_activation_limit` int not null default '1' after `support_url`)
+
+  at C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:712
+    708▕         // If an exception occurs when attempting to run a query, we'll format the error
+    709▕         // message to include the bindings with SQL, which will make this exception a
+    710▕         // lot more helpful to the developer instead of just the database's errors.
+    711▕         catch (Exception $e) {
+  ➜ 712▕             throw new QueryException(
+    713▕                 $query, $this->prepareBindings($bindings), $e
+    714▕             );
+    715▕         }
+    716▕     }
+
+  1   C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:501
+      PDOException::("SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'short_description'")
+
+  2   C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:501
+      PDOStatement::execute()

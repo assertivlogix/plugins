@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If the request is already for /public, serve normally
+    RewriteCond %{REQUEST_URI} !^/public/
+
+    # If the requested file or directory exists in the root, serve it
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Otherwise rewrite to /public keeping the URI
+    RewriteRule ^(.*)$ /public/$1 [L,NC,QSA]
+</IfModule>
+
+# OPTIONAL: If you want the root URL to silently serve public/index.php (no redirect),
+# uncomment this block and comment the above RewriteRule.
+RewriteRule ^(.*)$ /public/index.php [L]

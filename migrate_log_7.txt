@@ -1,0 +1,24 @@
+Migrating: 2025_11_28_000005_add_missing_fields_to_products_table
+Migrated:  2025_11_28_000005_add_missing_fields_to_products_table (54.53ms)
+Migrating: 2025_11_28_000006_add_is_admin_to_users_table
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'is_admin' (SQL: alter table `users` add `is_admin` tinyint(1) not null default '0' after `email`)
+
+  at C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:712
+    708▕         // If an exception occurs when attempting to run a query, we'll format the error
+    709▕         // message to include the bindings with SQL, which will make this exception a
+    710▕         // lot more helpful to the developer instead of just the database's errors.
+    711▕         catch (Exception $e) {
+  ➜ 712▕             throw new QueryException(
+    713▕                 $query, $this->prepareBindings($bindings), $e
+    714▕             );
+    715▕         }
+    716▕     }
+
+  1   C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:501
+      PDOException::("SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'is_admin'")
+
+  2   C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:501
+      PDOStatement::execute()

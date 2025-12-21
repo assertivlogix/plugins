@@ -1,0 +1,2 @@
+Migrating: 2025_11_25_120127_create_activated_sites_table
+^C

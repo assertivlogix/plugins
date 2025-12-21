@@ -1,0 +1,24 @@
+Migrating: 2025_11_25_124147_add_stripe_price_ids_to_products_table
+Migrated:  2025_11_25_124147_add_stripe_price_ids_to_products_table (142.87ms)
+Migrating: 2025_11_26_102540_update_products_table_for_wordpress_plugins
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'short_description' (SQL: alter table `products` add `short_description` varchar(255) null after `description`, add `version` varchar(20) not null default '1.0.0' after `short_description`, add `tested_up_to` varchar(20) null after `version`, add `requires_php` varchar(20) null after `tested_up_to`, add `requires_wordpress` varchar(20) null after `requires_php`, add `banner_image` varchar(255) null after `file_path`, add `icon_image` varchar(255) null after `banner_image`, add `is_active` tinyint(1) not null default '1' after `icon_image`, add `changelog` text null after `is_active`, add `documentation_url` varchar(255) null after `changelog`, add `github_url` varchar(255) null after `documentation_url`, add `support_url` varchar(255) null after `github_url`)
+
+  at C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:712
+    708▕         // If an exception occurs when attempting to run a query, we'll format the error
+    709▕         // message to include the bindings with SQL, which will make this exception a
+    710▕         // lot more helpful to the developer instead of just the database's errors.
+    711▕         catch (Exception $e) {
+  ➜ 712▕             throw new QueryException(
+    713▕                 $query, $this->prepareBindings($bindings), $e
+    714▕             );
+    715▕         }
+    716▕     }
+
+  1   C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:501
+      PDOException::("SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'short_description'")
+
+  2   C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:501
+      PDOStatement::execute()

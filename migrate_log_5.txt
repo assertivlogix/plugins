@@ -1,0 +1,22 @@
+Migrating: 2025_11_28_000003_add_is_active_to_products_table
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'is_active' (SQL: alter table `products` add `is_active` tinyint(1) not null default '1' after `file_path`)
+
+  at C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:712
+    708▕         // If an exception occurs when attempting to run a query, we'll format the error
+    709▕         // message to include the bindings with SQL, which will make this exception a
+    710▕         // lot more helpful to the developer instead of just the database's errors.
+    711▕         catch (Exception $e) {
+  ➜ 712▕             throw new QueryException(
+    713▕                 $query, $this->prepareBindings($bindings), $e
+    714▕             );
+    715▕         }
+    716▕     }
+
+  1   C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:501
+      PDOException::("SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'is_active'")
+
+  2   C:\xampp\htdocs\assertivlogix\vendor\laravel\framework\src\Illuminate\Database\Connection.php:501
+      PDOStatement::execute()

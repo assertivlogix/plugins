@@ -1,0 +1,4 @@
+Migrating: 2025_11_28_000006_add_is_admin_to_users_table
+Migrated:  2025_11_28_000006_add_is_admin_to_users_table (31.93ms)
+Migrating: 2025_11_28_000007_add_file_fields_to_licenses_table
+Migrated:  2025_11_28_000007_add_file_fields_to_licenses_table (37.20ms)
