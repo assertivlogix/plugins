@@ -118,6 +118,7 @@ Route::prefix('support')->name('support.')->group(function () {
     Route::get('/', [\App\Http\Controllers\SupportController::class, 'index'])->name('index'); // Support Center
     Route::get('/documentation', [\App\Http\Controllers\SupportController::class, 'documentation'])->name('documentation');
     Route::get('/contact', [\App\Http\Controllers\SupportController::class, 'contact'])->name('contact');
+    Route::post('/contact', [\App\Http\Controllers\SupportController::class, 'submitContact'])->name('contact.submit');
     // Route::get('/forum', [\App\Http\Controllers\SupportController::class, 'forum'])->name('forum');
     
     // Create new group for Forum

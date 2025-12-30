@@ -853,10 +853,10 @@
                 <div class="footer-section">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="{{ env('MAIN_WEBSITE')}}/about-us/">About Us</a></li>
+                        <li><a href="{{ env('MAIN_WEBSITE')}}/blog/">Blog</a></li>
+                        <?php /*<li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li> */ ?>
                     </ul>
                 </div>
             </div>

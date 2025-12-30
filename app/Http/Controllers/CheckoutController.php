@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Razorpay\Api\Api;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PurchaseReceipt;
+use App\Mail\PurchaseNotification;
 
 class CheckoutController extends Controller
 {
@@ -217,11 +218,21 @@ class CheckoutController extends Controller
                 'processed_at' => now(),
             ]);
 
-            // Send Purchase Receipt Email
+            // Send Purchase Receipt Email to User
             try {
                 Mail::to($user->email)->send(new PurchaseReceipt($user, $subscription, $license));
             } catch (\Exception $e) {
                 \Log::error('Failed to send purchase receipt email', [
+                    'error' => $e->getMessage(),
+                    'user_id' => $user->id
+                ]);
+            }
+
+            // Send Purchase Notification Email to Sales Team
+            try {
+                Mail::to('sales@assertivlogix.com')->send(new PurchaseNotification($user, $subscription, $license, $product));
+            } catch (\Exception $e) {
+                \Log::error('Failed to send purchase notification email to sales', [
                     'error' => $e->getMessage(),
                     'user_id' => $user->id
                 ]);
