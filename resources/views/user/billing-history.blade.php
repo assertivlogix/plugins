@@ -297,9 +297,204 @@
     padding: 0;
 }
 
+/* Transaction Cards Layout */
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+}
+
+.transaction-card {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.transaction-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.transaction-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    border-color: #007bff;
+}
+
+.transaction-card:hover::before {
+    background: #007bff;
+}
+
+.transaction-card.completed::before {
+    background: #28a745;
+}
+
+.transaction-card.failed::before {
+    background: #dc3545;
+}
+
+.transaction-card.pending::before {
+    background: #ffc107;
+}
+
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.transaction-header-left {
+    flex: 1;
+}
+
+.transaction-header-right {
+    text-align: right;
+}
+
+.transaction-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 6px;
+}
+
+.transaction-id {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #6c757d;
+    background: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.transaction-amount-large {
+    font-size: 24px;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 4px;
+}
+
+.transaction-status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.transaction-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.transaction-info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.transaction-info-item i {
+    width: 20px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.transaction-info-label {
+    font-size: 12px;
+    color: #6c757d;
+    font-weight: 500;
+    margin-right: 4px;
+}
+
+.transaction-info-value {
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.transaction-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.transaction-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #f1f3f4;
+    margin-top: 16px;
+}
+
+.transaction-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6c757d;
+    font-size: 13px;
+}
+
+.transaction-actions-new {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-transaction-action {
+    padding: 8px 16px;
+    border: 1px solid #dee2e6;
+    background: white;
+    border-radius: 6px;
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-transaction-action:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+    text-decoration: none;
+}
+
+.btn-transaction-action i {
+    font-size: 12px;
+}
+
+/* Legacy table styles for backward compatibility */
 .billing-table {
     width: 100%;
     border-collapse: collapse;
+    display: none; /* Hide table, use cards instead */
 }
 
 .billing-table th {
@@ -353,7 +548,17 @@
     font-weight: 500;
 }
 
-.transaction-status.active {
+.transaction-status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.transaction-status.active,
+.transaction-status.completed {
     background: #d4edda;
     color: #155724;
 }
@@ -499,6 +704,40 @@
         grid-template-columns: 1fr;
     }
     
+    .transaction-card {
+        padding: 16px;
+    }
+    
+    .transaction-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .transaction-header-right {
+        text-align: left;
+        width: 100%;
+    }
+    
+    .transaction-body {
+        grid-template-columns: 1fr;
+    }
+    
+    .transaction-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .transaction-actions-new {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .btn-transaction-action {
+        width: 100%;
+        justify-content: center;
+    }
+    
     .billing-table {
         font-size: 14px;
     }
@@ -600,110 +839,110 @@
                 
                 <div class="card-body">
                     @if($billingHistory->count() > 0)
-                        <table class="billing-table">
-                            <thead>
-                                <tr>
-                                    <th>Transaction</th>
-                                    <th>Description</th>
-                                    <th>Type</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
-                                    <th>Date</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($billingHistory as $transaction)
-                                <tr>
-                                    <td>
-                                        <span class="transaction-id">{{ $transaction['transaction_id'] }}</span>
-                                    </td>
-                                    <td>
-                                        <div class="transaction-desc">{{ $transaction['description'] }}</div>
-                                        <div class="transaction-plan">{{ $transaction['plan'] }} Plan</div>
-                                        @if(isset($transaction['metadata']['license_key']))
-                                            <div class="transaction-details">
-                                                <i class="fas fa-key me-1"></i>
-                                                License: {{ Str::limit($transaction['metadata']['license_key'], 20, '...') }}
-                                            </div>
-                                        @endif
-                                        @if(isset($transaction['metadata']['billing_name']))
-                                            <div class="transaction-details">
-                                                <i class="fas fa-user me-1"></i>
-                                                {{ $transaction['metadata']['billing_name'] }}
-                                            </div>
-                                        @endif
-                                        @if(isset($transaction['metadata']['billing_email']))
-                                            <div class="transaction-details">
-                                                <i class="fas fa-envelope me-1"></i>
-                                                {{ $transaction['metadata']['billing_email'] }}
-                                            </div>
-                                        @endif
-                                        @if(isset($transaction['metadata']['period_start']) && isset($transaction['metadata']['period_end']))
-                                            <div class="transaction-details">
-                                                <i class="fas fa-calendar me-1"></i>
-                                                {{ $transaction['metadata']['period_start'] }} - {{ $transaction['metadata']['period_end'] }}
-                                            </div>
-                                        @endif
-                                        @if(isset($transaction['metadata']['discount_amount']) && $transaction['metadata']['discount_amount'] > 0)
-                                            <div class="transaction-details text-success">
-                                                <i class="fas fa-tag me-1"></i>
-                                                Discount: ${{ number_format($transaction['metadata']['discount_amount'], 2) }}
-                                                @if(isset($transaction['metadata']['discount_code']))
-                                                    ({{ $transaction['metadata']['discount_code'] }})
-                                                @endif
-                                            </div>
-                                        @endif
-                                        @if($transaction['status'] === 'failed' && isset($transaction['metadata']['failure_reason']))
-                                            <div class="transaction-details text-danger">
-                                                <i class="fas fa-exclamation-triangle me-1"></i>
-                                                {{ $transaction['metadata']['failure_reason'] }}
-                                            </div>
-                                        @endif
-                                        @if($transaction['status'] === 'pending')
-                                            <div class="transaction-details text-warning">
-                                                <i class="fas fa-clock me-1"></i>
-                                                Awaiting payment confirmation
-                                            </div>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <span class="transaction-type {{ $transaction['type'] }}">
-                                            {{ ucfirst($transaction['type']) }}
-                                        </span>
-                                        @if(isset($transaction['renewal_type']))
-                                            <div class="transaction-details">
-                                                {{ ucfirst($transaction['renewal_type']) }}
-                                            </div>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <span class="transaction-amount">${{ number_format($transaction['amount'], 2) }}</span>
-                                    </td>
-                                    <td>
-                                        <span class="transaction-status {{ $transaction['status'] }}">
+                        <div class="transactions-list">
+                            @foreach($billingHistory as $transaction)
+                            <div class="transaction-card {{ $transaction['status'] }}">
+                                <div class="transaction-header">
+                                    <div class="transaction-header-left">
+                                        <div class="transaction-title">{{ $transaction['description'] }}</div>
+                                        <div class="transaction-id">
+                                            <i class="fas fa-hashtag me-1"></i>{{ $transaction['transaction_id'] }}
+                                        </div>
+                                    </div>
+                                    <div class="transaction-header-right">
+                                        <div class="transaction-amount-large">${{ number_format($transaction['amount'], 2) }}</div>
+                                        <span class="transaction-status-badge transaction-status {{ $transaction['status'] }}">
                                             {{ ucfirst($transaction['status']) }}
                                         </span>
-                                    </td>
-                                    <td>
-                                        {{ $transaction['date']->format('M d, Y') }}
-                                        <br>
-                                        <small>{{ $transaction['date']->format('h:i A') }}</small>
-                                    </td>
-                                    <td>
-                                        <div class="transaction-actions">
-                                            <a href="#" onclick="viewInvoice('{{ $transaction['invoice_url'] }}', '{{ $transaction['transaction_id'] }}'); return false;" class="btn-action">
-                                                <i class="fas fa-file-invoice"></i> Invoice
-                                            </a>
-                                            <a href="{{ $transaction['receipt_url'] }}" class="btn-action">
-                                                <i class="fas fa-receipt"></i> Receipt
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div class="transaction-body">
+                                    <div class="transaction-info-item">
+                                        <i class="fas fa-tag"></i>
+                                        <span class="transaction-info-label">Type:</span>
+                                        <span class="transaction-type-badge transaction-type {{ $transaction['type'] }}">
+                                            {{ ucfirst($transaction['type']) }}
+                                        </span>
+                                    </div>
+                                    
+                                    <div class="transaction-info-item">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span class="transaction-info-label">Plan:</span>
+                                        <span class="transaction-info-value">{{ ucfirst($transaction['plan']) }} Plan</span>
+                                    </div>
+                                    
+                                    @if(isset($transaction['metadata']['license_key']))
+                                    <div class="transaction-info-item">
+                                        <i class="fas fa-key"></i>
+                                        <span class="transaction-info-label">License:</span>
+                                        <span class="transaction-info-value" style="font-family: monospace; font-size: 12px;">
+                                            {{ Str::limit($transaction['metadata']['license_key'], 25, '...') }}
+                                        </span>
+                                    </div>
+                                    @endif
+                                    
+                                    @if(isset($transaction['metadata']['period_start']) && isset($transaction['metadata']['period_end']))
+                                    <div class="transaction-info-item">
+                                        <i class="fas fa-calendar-check"></i>
+                                        <span class="transaction-info-label">Period:</span>
+                                        <span class="transaction-info-value">
+                                            {{ $transaction['metadata']['period_start'] }} - {{ $transaction['metadata']['period_end'] }}
+                                        </span>
+                                    </div>
+                                    @endif
+                                    
+                                    @if(isset($transaction['metadata']['discount_amount']) && $transaction['metadata']['discount_amount'] > 0)
+                                    <div class="transaction-info-item">
+                                        <i class="fas fa-tag text-success"></i>
+                                        <span class="transaction-info-label">Discount:</span>
+                                        <span class="transaction-info-value text-success">
+                                            ${{ number_format($transaction['metadata']['discount_amount'], 2) }}
+                                            @if(isset($transaction['metadata']['discount_code']))
+                                                ({{ $transaction['metadata']['discount_code'] }})
+                                            @endif
+                                        </span>
+                                    </div>
+                                    @endif
+                                    
+                                    @if($transaction['status'] === 'failed' && isset($transaction['metadata']['failure_reason']))
+                                    <div class="transaction-info-item" style="grid-column: 1 / -1;">
+                                        <i class="fas fa-exclamation-triangle text-danger"></i>
+                                        <span class="transaction-info-value text-danger">
+                                            {{ $transaction['metadata']['failure_reason'] }}
+                                        </span>
+                                    </div>
+                                    @endif
+                                    
+                                    @if($transaction['status'] === 'pending')
+                                    <div class="transaction-info-item" style="grid-column: 1 / -1;">
+                                        <i class="fas fa-clock text-warning"></i>
+                                        <span class="transaction-info-value text-warning">
+                                            Awaiting payment confirmation
+                                        </span>
+                                    </div>
+                                    @endif
+                                </div>
+                                
+                                <div class="transaction-footer">
+                                    <div class="transaction-date">
+                                        <i class="fas fa-clock"></i>
+                                        <span>{{ $transaction['date']->format('M d, Y') }} at {{ $transaction['date']->format('h:i A') }}</span>
+                                    </div>
+                                    <div class="transaction-actions-new">
+                                        <a href="#" onclick="viewInvoice('{{ $transaction['invoice_url'] }}', '{{ $transaction['transaction_id'] }}'); return false;" class="btn-transaction-action">
+                                            <i class="fas fa-file-invoice"></i>
+                                            <span>Invoice</span>
+                                        </a>
+                                        <a href="#" onclick="viewReceipt('{{ $transaction['receipt_url'] }}', '{{ $transaction['transaction_id'] }}'); return false;" class="btn-transaction-action">
+                                            <i class="fas fa-receipt"></i>
+                                            <span>Receipt</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
                     @else
                         <div class="empty-state">
                             <i class="fas fa-receipt"></i>
@@ -833,6 +1072,29 @@
     </div>
 </div>
 
+<!-- Receipt Modal -->
+<div class="modal fade" id="receiptModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Receipt Preview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0" style="height: 600px;">
+                <iframe id="receiptFrame" style="width: 100%; height: 100%; border: none;"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="printReceipt()">
+                    <i class="fas fa-print me-1"></i> Print
+                </button>
+                <button type="button" class="btn btn-primary" onclick="downloadReceiptPdf()">
+                    <i class="fas fa-download me-1"></i> Download PDF
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 // Invoice Functions
 function viewInvoice(url, transactionId) {
@@ -856,9 +1118,50 @@ async function downloadInvoicePdf() {
     const separator = url.includes('?') ? '&' : '?';
     const downloadUrl = url + separator + 'download=true&t=' + new Date().getTime();
     
-    // Open in new tab/window which will trigger the download logic in invoice.blade.php
-    // This is much more reliable than hidden iframes for this specific library
-    window.open(downloadUrl, '_blank');
+    // Create a new window for PDF generation
+    const newWindow = window.open(downloadUrl, '_blank');
+    
+    // Close the modal after opening download window
+    setTimeout(() => {
+        const modal = bootstrap.Modal.getInstance(document.getElementById('invoiceModal'));
+        if (modal) {
+            modal.hide();
+        }
+    }, 500);
+}
+
+// Receipt Functions
+function viewReceipt(url, transactionId) {
+    const modal = new bootstrap.Modal(document.getElementById('receiptModal'));
+    const frame = document.getElementById('receiptFrame');
+    frame.src = url;
+    frame.dataset.transactionId = transactionId;
+    modal.show();
+}
+
+function printReceipt() {
+    const frame = document.getElementById('receiptFrame');
+    frame.contentWindow.print();
+}
+
+async function downloadReceiptPdf() {
+    const frame = document.getElementById('receiptFrame');
+    const url = frame.src;
+    
+    // Add download parameter
+    const separator = url.includes('?') ? '&' : '?';
+    const downloadUrl = url + separator + 'download=true&t=' + new Date().getTime();
+    
+    // Create a new window for PDF generation
+    const newWindow = window.open(downloadUrl, '_blank');
+    
+    // Close the modal after opening download window
+    setTimeout(() => {
+        const modal = bootstrap.Modal.getInstance(document.getElementById('receiptModal'));
+        if (modal) {
+            modal.hide();
+        }
+    }, 500);
 }
 
 // Quick Actions Functions for Billing History
@@ -926,7 +1229,7 @@ function showBillingSupportModal() {
                                     <div class="card-body text-center">
                                         <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
                                         <h6 class="card-title">Email Support</h6>
-                                        <p class="card-text small">billing@moonplugins.com</p>
+                                        <p class="card-text small">salse@assertivlogix.com</p>
                                         <small class="text-muted">Response within 24 hours</small>
                                     </div>
                                 </div>
@@ -936,7 +1239,7 @@ function showBillingSupportModal() {
                                     <div class="card-body text-center">
                                         <i class="fas fa-phone fa-2x text-success mb-2"></i>
                                         <h6 class="card-title">Phone Support</h6>
-                                        <p class="card-text small">1-800-MOON-PLUGINS</p>
+                                        <p class="card-text small">+91 8128128981</p>
                                         <small class="text-muted">Mon-Fri 9am-5pm EST</small>
                                     </div>
                                 </div>

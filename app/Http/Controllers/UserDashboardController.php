@@ -231,7 +231,7 @@ class UserDashboardController extends Controller
                     'payment_method' => $transaction->payment_method,
                     'transaction_id' => $transaction->transaction_id,
                     'invoice_url' => route('user.invoices.download', $transaction->transaction_id),
-                    'receipt_url' => '#', // Placeholder for receipt download
+                    'receipt_url' => route('user.receipts.download', $transaction->transaction_id),
                     'metadata' => [
                         'license_key' => $transaction->license_key,
                         'product_id' => $transaction->product_id,
@@ -438,5 +438,19 @@ class UserDashboardController extends Controller
             ->firstOrFail();
             
         return view('user.invoice', compact('transaction'));
+    }
+
+    /**
+     * Download/View Receipt
+     */
+    public function downloadReceipt($transactionId)
+    {
+        $user = auth()->user();
+        
+        $transaction = Transaction::where('user_id', $user->id)
+            ->where('transaction_id', $transactionId)
+            ->firstOrFail();
+            
+        return view('user.receipt', compact('transaction'));
     }
 }

@@ -86,6 +86,8 @@ Route::middleware(['auth'])->group(function () {
         
         // Invoices
         Route::get('/invoices/{transaction}', [UserDashboardController::class, 'downloadInvoice'])->name('invoices.download');
+        // Receipts
+        Route::get('/receipts/{transaction}', [UserDashboardController::class, 'downloadReceipt'])->name('receipts.download');
     });
     
     // Alias routes for convenience
