@@ -843,7 +843,7 @@
                         </li>
                         <li><a href="{{ route('pricing') }}">Pricing</a></li>
                         <li><a href="{{ route('support.index') }}">Support</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="{{ env('MAIN_WEBSITE')}}/blog/">Blog</a></li>
                     </ul>
                 </nav>
 
