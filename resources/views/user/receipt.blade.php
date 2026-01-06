@@ -255,7 +255,7 @@
                             <strong>Assertivlogix Plugins</strong>
                             123 Tech Street<br>
                             Innovation City, IC 12345<br>
-                            support@assertivlogix.com
+                            sales@assertivlogix.com
                         </div>
                     </td>
                     <td style="width: 50%; padding-left: 15px; vertical-align: top;">
@@ -330,7 +330,7 @@
 
         <div class="footer">
             <p style="margin: 5px 0;">This is your official payment receipt. Please keep it for your records.</p>
-            <p style="margin: 5px 0;">If you have any questions, please contact <strong style="color: #28a745;">support@assertivlogix.com</strong></p>
+            <p style="margin: 5px 0;">If you have any questions, please contact <strong style="color: #28a745;">sales@assertivlogix.com</strong></p>
         </div>
     </div>
 

@@ -74,7 +74,7 @@
                         <div class="p-3">
                             <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
                             <h5>Email Us</h5>
-                            <p class="text-muted">support@assertivlogix.com</p>
+                            <p class="text-muted">sales@assertivlogix.com</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -88,7 +88,7 @@
                         <div class="p-3">
                             <i class="fas fa-phone fa-2x text-primary mb-3"></i>
                             <h5>Call Us</h5>
-                            <p class="text-muted">+1 (555) 123-4567</p>
+                            <p class="text-muted">+91 8128128981</p>
                         </div>
                     </div>
                 </div>

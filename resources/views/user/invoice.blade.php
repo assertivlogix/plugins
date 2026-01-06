@@ -198,7 +198,7 @@
                             <strong>Assertivlogix Plugins</strong>
                             123 Tech Street<br>
                             Innovation City, IC 12345<br>
-                            support@assertivlogix.com
+                            sales@assertivlogix.com
                         </div>
                     </td>
                     <td style="width: 50%; padding-left: 15px; vertical-align: top;">
@@ -263,7 +263,7 @@
 
         <div class="footer">
             <p style="margin: 5px 0;">Thank you for your business!</p>
-            <p style="margin: 5px 0;">If you have any questions, please contact <strong style="color: #4e73df;">support@assertivlogix.com</strong></p>
+            <p style="margin: 5px 0;">If you have any questions, please contact <strong style="color: #4e73df;">sales@assertivlogix.com</strong></p>
         </div>
     </div>
 
