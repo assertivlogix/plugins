@@ -820,8 +820,9 @@
         <div class="container">
             <div class="nav-container">
                 <a href="/" class="logo">
-                    <i class="fas fa-rocket"></i>
-                    Assertivlogix
+                    <?php /* <i class="fas fa-rocket"></i>
+                    Assertivlogix */ ?>
+                    <img src="https://www.assertivlogix.com/wp-content/uploads/2023/09/For-website-08-08.svg" alt="Assertivlogix" style="width: 200px; height: 68px;">
                 </a>
                 
                 <button class="mobile-menu-toggle" id="mobileMenuToggle">
