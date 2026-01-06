@@ -1,6 +1,35 @@
 @extends('layouts.frontend')
 
 @section('title', 'Trusted WordPress Solutions')
+@section('meta_title', 'Assertivlogix - Premium WordPress Plugins for Security, SEO, Backup & Performance')
+@section('meta_description', 'Discover premium WordPress plugins trusted by millions. Secure your site, boost SEO, automate backups, and optimize performance with Assertivlogix professional plugins.')
+@section('meta_keywords', 'WordPress plugins, WordPress security, SEO plugins, backup plugins, performance optimization, WordPress tools, website security')
+@section('canonical_url', url('/'))
+@section('og_type', 'website')
+@section('og_image', asset('images/og-home.jpg'))
+
+@section('schema_json')
+@php
+$schema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'Organization',
+    'name' => 'Assertivlogix',
+    'url' => url('/'),
+    'logo' => asset('images/logo.png'),
+    'description' => 'Premium WordPress plugins for security, SEO, backup, and performance',
+    'sameAs' => [
+        'https://www.facebook.com/assertivlogix',
+        'https://twitter.com/assertivlogix'
+    ],
+    'contactPoint' => [
+        '@type' => 'ContactPoint',
+        'contactType' => 'Customer Support',
+        'url' => route('support.contact')
+    ]
+];
+@endphp
+{!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+@endsection
 
 @section('content')
 <!-- Hero Section -->

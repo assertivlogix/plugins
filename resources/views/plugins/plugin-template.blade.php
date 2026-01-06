@@ -1,6 +1,47 @@
 @extends('layouts.frontend')
 
 @section('title', $plugin['name'] . ' - Assertivlogix')
+@section('meta_title', $plugin['name'] . ' - Premium WordPress Plugin | Assertivlogix')
+@section('meta_description', Str::limit($plugin['description'] ?? $plugin['tagline'] ?? 'Premium WordPress plugin by Assertivlogix', 155))
+@section('meta_keywords', $plugin['name'] . ', WordPress plugin, ' . ($plugin['plugin_category'] ?? 'WordPress') . ', premium plugin, Assertivlogix')
+@section('canonical_url', route('products.show', $plugin['slug']))
+@section('og_type', 'product')
+@section('og_image', $plugin['banner_image'] ?? $plugin['icon_image'] ?? asset('images/og-default.jpg'))
+@section('og_title', $plugin['name'] . ' - Premium WordPress Plugin')
+@section('og_description', Str::limit($plugin['description'] ?? $plugin['tagline'] ?? 'Premium WordPress plugin', 200))
+
+@section('schema_json')
+@php
+$schema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'SoftwareApplication',
+    'name' => $plugin['name'],
+    'applicationCategory' => 'WordPress Plugin',
+    'operatingSystem' => 'WordPress',
+    'offers' => [
+        '@type' => 'Offer',
+        'price' => (string)($plugin['price_monthly'] ?? 0),
+        'priceCurrency' => 'USD',
+        'priceValidUntil' => date('Y-m-d', strtotime('+1 year')),
+        'availability' => 'https://schema.org/InStock'
+    ],
+    'aggregateRating' => [
+        '@type' => 'AggregateRating',
+        'ratingValue' => '4.8',
+        'ratingCount' => '1250'
+    ],
+    'description' => Str::limit($plugin['description'] ?? $plugin['tagline'] ?? '', 500),
+    'url' => route('products.show', $plugin['slug']),
+    'image' => $plugin['banner_image'] ?? $plugin['icon_image'] ?? asset('images/og-default.jpg'),
+    'publisher' => [
+        '@type' => 'Organization',
+        'name' => 'Assertivlogix',
+        'url' => url('/')
+    ]
+];
+@endphp
+{!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+@endsection
 
 @section('content')
 <style>

@@ -1,6 +1,42 @@
 @extends('layouts.frontend')
 
 @section('title', 'WordPress Plugins - Assertivlogix')
+@section('meta_title', 'WordPress Plugins - Premium Security, SEO, Backup & Performance Tools | Assertivlogix')
+@section('meta_description', 'Browse our complete collection of premium WordPress plugins. Security, SEO optimization, automated backups, performance tools, and more. Trusted by millions of website owners.')
+@section('meta_keywords', 'WordPress plugins, security plugins, SEO plugins, backup plugins, performance plugins, WordPress tools, premium plugins')
+@section('canonical_url', route('products.index'))
+@section('og_type', 'website')
+@section('og_image', asset('images/og-plugins.jpg'))
+
+@section('schema_json')
+@php
+$schema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'CollectionPage',
+    'name' => 'WordPress Plugins',
+    'description' => 'Premium WordPress plugins collection',
+    'url' => route('products.index'),
+    'mainEntity' => [
+        '@type' => 'ItemList',
+        'itemListElement' => []
+    ]
+];
+
+foreach($products as $index => $product) {
+    $schema['mainEntity']['itemListElement'][] = [
+        '@type' => 'ListItem',
+        'position' => $index + 1,
+        'item' => [
+            '@type' => 'SoftwareApplication',
+            'name' => $product->name,
+            'url' => route('products.show', $product->slug),
+            'description' => Str::limit($product->short_description, 150)
+        ]
+    ];
+}
+@endphp
+{!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+@endsection
 
 @section('content')
 <style>

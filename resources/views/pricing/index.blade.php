@@ -1,6 +1,12 @@
 @extends('layouts.frontend')
 
 @section('title', 'Pricing - Assertivlogix')
+@section('meta_title', 'WordPress Plugin Pricing Plans - Affordable Premium Plugins | Assertivlogix')
+@section('meta_description', 'Choose the perfect WordPress plugin plan for your needs. Flexible monthly and yearly pricing for security, SEO, backup, and performance plugins. Start from $19.99/month.')
+@section('meta_keywords', 'WordPress plugin pricing, premium plugin prices, WordPress plugin plans, affordable WordPress plugins, plugin subscription')
+@section('canonical_url', route('pricing'))
+@section('og_type', 'website')
+@section('og_image', asset('images/og-pricing.jpg'))
 
 @section('content')
 <div class="pricing-header py-5 text-center text-white text-center" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); position: relative; overflow: hidden;">

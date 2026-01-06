@@ -7,7 +7,86 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Assertivlogix') }} - @yield('title', 'Trusted WordPress Solutions')</title>
+    @php
+        $siteName = config('app.name', 'Assertivlogix');
+        $defaultImage = asset('images/og-default.jpg');
+    @endphp
+
+    <!-- Primary Meta Tags -->
+    @if(view()->hasSection('meta_title'))
+    <title>@yield('meta_title')</title>
+    <meta name="title" content="@yield('meta_title')">
+    @else
+    <title>{{ $siteName }} - @yield('title', 'Trusted WordPress Solutions')</title>
+    <meta name="title" content="{{ $siteName }} - @yield('title', 'Trusted WordPress Solutions')">
+    @endif
+    <meta name="description" content="@yield('meta_description', 'Premium WordPress plugins for security, SEO, backup, performance, and more. Trusted by millions of website owners worldwide.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'WordPress plugins, security, SEO, backup, performance, WordPress tools')">
+    <meta name="author" content="@yield('author', $siteName)">
+    <meta name="robots" content="@yield('robots', 'index, follow')">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="@yield('canonical_url', url()->current())">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:url" content="@yield('canonical_url', url()->current())">
+    @if(view()->hasSection('og_title'))
+    <meta property="og:title" content="@yield('og_title')">
+    @elseif(view()->hasSection('meta_title'))
+    <meta property="og:title" content="@yield('meta_title')">
+    @else
+    <meta property="og:title" content="{{ $siteName }} - @yield('title', 'Trusted WordPress Solutions')">
+    @endif
+    @if(view()->hasSection('og_description'))
+    <meta property="og:description" content="@yield('og_description')">
+    @else
+    <meta property="og:description" content="@yield('meta_description', 'Premium WordPress plugins for security, SEO, backup, performance, and more. Trusted by millions of website owners worldwide.')">
+    @endif
+    <meta property="og:image" content="@yield('og_image', $defaultImage)">
+    <meta property="og:site_name" content="{{ $siteName }}">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="@yield('twitter_card', 'summary_large_image')">
+    <meta name="twitter:url" content="@yield('canonical_url', url()->current())">
+    @if(view()->hasSection('twitter_title'))
+    <meta name="twitter:title" content="@yield('twitter_title')">
+    @elseif(view()->hasSection('meta_title'))
+    <meta name="twitter:title" content="@yield('meta_title')">
+    @else
+    <meta name="twitter:title" content="{{ $siteName }} - @yield('title', 'Trusted WordPress Solutions')">
+    @endif
+    @if(view()->hasSection('twitter_description'))
+    <meta name="twitter:description" content="@yield('twitter_description')">
+    @else
+    <meta name="twitter:description" content="@yield('meta_description', 'Premium WordPress plugins for security, SEO, backup, performance, and more. Trusted by millions of website owners worldwide.')">
+    @endif
+    @if(view()->hasSection('twitter_image'))
+    <meta name="twitter:image" content="@yield('twitter_image')">
+    @else
+    <meta name="twitter:image" content="@yield('og_image', $defaultImage)">
+    @endif
+    @if(view()->hasSection('twitter_site'))
+    <meta name="twitter:site" content="@yield('twitter_site')">
+    @endif
+    @if(view()->hasSection('twitter_creator'))
+    <meta name="twitter:creator" content="@yield('twitter_creator')">
+    @endif
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Schema.org Structured Data -->
+    @if(view()->hasSection('schema_json'))
+    <script type="application/ld+json">
+    @yield('schema_json')
+    </script>
+    @endif
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

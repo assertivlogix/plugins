@@ -1,6 +1,12 @@
 @extends('layouts.frontend')
 
 @section('title', 'Support Center - Assertivlogix')
+@section('meta_title', 'WordPress Plugin Support Center - Help & Documentation | Assertivlogix')
+@section('meta_description', 'Get help with your WordPress plugins. Access documentation, tutorials, community forum, and contact our expert support team. We\'re here to help you succeed.')
+@section('meta_keywords', 'WordPress plugin support, plugin help, documentation, tutorial, customer support, plugin assistance')
+@section('canonical_url', route('support.index'))
+@section('og_type', 'website')
+@section('og_image', asset('images/og-support.jpg'))
 
 @section('content')
 <div class="support-hero">

@@ -1,6 +1,13 @@
 @extends('layouts.frontend')
 
 @section('title', $topic->title . ' - Assertivlogix Forum')
+@section('meta_title', $topic->title . ' - Community Discussion | Assertivlogix Forum')
+@section('meta_description', Str::limit($topic->posts->first()->content ?? $topic->title, 155))
+@section('meta_keywords', 'WordPress forum, plugin discussion, community support, ' . $topic->title)
+@section('canonical_url', route('support.forum.show', $topic->slug))
+@section('og_type', 'article')
+@section('og_image', asset('images/og-forum.jpg'))
+@section('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1')
 
 @section('content')
 <div class="py-5 bg-light">
