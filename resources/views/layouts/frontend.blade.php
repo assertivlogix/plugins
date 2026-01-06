@@ -762,15 +762,6 @@
                                 @endif
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Solutions</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('solutions.security') }}">Security</a></li>
-                                <li><a class="dropdown-item" href="{{ route('solutions.seo') }}">SEO Optimization</a></li>
-                                <li><a class="dropdown-item" href="{{ route('solutions.backup') }}">Backup & Migration</a></li>
-                                <li><a class="dropdown-item" href="{{ route('solutions.performance') }}">Performance</a></li>
-                            </ul>
-                        </li>
                         <li><a href="{{ route('pricing') }}">Pricing</a></li>
                         <li><a href="{{ route('support.index') }}">Support</a></li>
                         <li><a href="#">Blog</a></li>
@@ -830,15 +821,6 @@
                             @endforeach
                         @endif
                         <li><a href="{{ route('products.index') }}">All Plugins</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Solutions</h4>
-                    <ul>
-                        <li><a href="{{ route('solutions.security') }}">Security</a></li>
-                        <li><a href="{{ route('solutions.seo') }}">SEO Optimization</a></li>
-                        <li><a href="{{ route('solutions.backup') }}">Backup & Migration</a></li>
-                        <li><a href="{{ route('solutions.performance') }}">Performance</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

@@ -108,13 +108,6 @@ Route::get('/test-checkout-success', function() {
 Route::get('/test-auth', function() {
     return 'Auth test: ' . (auth()->check() ? 'Logged in' : 'Not logged in');
 });
-// Solution Routes
-Route::prefix('solutions')->name('solutions.')->group(function () {
-    Route::get('/security', [\App\Http\Controllers\SolutionController::class, 'security'])->name('security');
-    Route::get('/seo', [\App\Http\Controllers\SolutionController::class, 'seo'])->name('seo');
-    Route::get('/backup', [\App\Http\Controllers\SolutionController::class, 'backup'])->name('backup');
-    Route::get('/performance', [\App\Http\Controllers\SolutionController::class, 'performance'])->name('performance');
-});
 // Support Routes
 Route::prefix('support')->name('support.')->group(function () {
     Route::get('/', [\App\Http\Controllers\SupportController::class, 'index'])->name('index'); // Support Center
@@ -132,3 +125,6 @@ Route::prefix('support')->name('support.')->group(function () {
 });
 
 Route::get('/pricing', [\App\Http\Controllers\PricingController::class, 'index'])->name('pricing');
+
+// Sitemap
+Route::get('/sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
