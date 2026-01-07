@@ -187,6 +187,34 @@
             @yield('content')
         </main>
     </div>
+    <!-- Analytics Button Tracking -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function(e) {
+                var target = e.target.closest('button, a.btn, input[type="submit"], input[type="button"]');
+                
+                if (target) {
+                    var label = target.innerText || target.value || target.getAttribute('aria-label') || 'Unlabeled Button';
+                    // Clean up label (remove extra whitespace)
+                    label = label.trim();
+                    
+                    var id = target.id || '';
+                    var classes = target.className || '';
+                    
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'button_click', {
+                            'event_category': 'Button',
+                            'event_label': label,
+                            'button_id': id,
+                            'button_classes': classes,
+                            'page_location': window.location.href
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+
     @stack('scripts')
 </body>
 </html>
