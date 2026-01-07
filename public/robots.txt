@@ -1,2 +1,32 @@
 User-agent: *
-Disallow:
+
+Sitemap: https://plugins.assertivlogix.com/sitemap.xml
+
+
+Disallow: /wp-admin/
+Disallow: /blog/*/feed/
+Disallow: /blog/tag/
+Disallow: /blog/category/
+Disallow: /blog/author/mtpl-admin/
+Disallow: /blog/blog/
+Disallow: /cgi-bin
+Disallow: /*/*/*/attachment 
+Disallow: /trackback
+Disallow: /*?s=
+Disallow: /*?attachment_id=
+Disallow: */*.doc
+Disallow: /blog/employfeedback/
+Disallow: /?s={search_term_string}
+Disallow: /?amp*
+Disallow: /utm*
+Disallow: /?noamp=mobile*
+Disallow: /blog/feed
+Disallow: /wp-content/uploads/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/plugins/*
+Disallow: /wp-includes/css/
+Disallow: /wp-includes/js/
+Disallow: /wp-includes/images/
+Disallow: /wp-admin/css/
+Disallow: /wp-admin/js/
+Disallow: /wp-admin/admin-ajax.php
