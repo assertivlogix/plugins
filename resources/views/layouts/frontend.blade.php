@@ -301,8 +301,8 @@
         }
 
         .btn-outline:hover {
-            background: white;
-            color: #034f61;
+            background: #034f61;
+            color: white;
             transform: translateY(-2px);
         }
 

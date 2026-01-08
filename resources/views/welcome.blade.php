@@ -184,7 +184,7 @@ $schema = [
             <a href="{{ route('products.index') }}" class="btn btn-primary" style="background: white; color: var(--primary-color);">
                 <i class="fas fa-shopping-cart"></i> Browse All Plugins
             </a>
-            <a href="#" class="btn btn-outline" style="border-color: white; color: white;">
+            <a href="tel:+918128128981" class="btn btn-outline" style="border-color: white; color: white;">
                 <i class="fas fa-phone"></i> Contact Sales
             </a>
         </div>
