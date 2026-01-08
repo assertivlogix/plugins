@@ -6,7 +6,7 @@
 <style>
     :root {
         --hero-color: #8b5cf6;
-        --hero-color-dark: #7c3aed;
+        --hero-color-dark: #034f61;
         --hero-color-darker: #6d28d9;
         --feature-color: #8b5cf6;
     }

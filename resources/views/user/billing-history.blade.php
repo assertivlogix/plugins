@@ -59,7 +59,7 @@
 }
 
 .quick-actions-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #034f61 0%, #764ba2 100%);
     color: white;
     padding: 20px;
     text-align: center;

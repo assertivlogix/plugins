@@ -162,7 +162,7 @@
 .text-green { color: #10b981 !important; }
 .text-orange { color: #f59e0b !important; }
 .text-red { color: #ef4444 !important; }
-.text-blue { color: #3b82f6 !important; }
+.text-blue { color: #034f61  !important; }
 
 /* Unified button color */
 .pricing-card .btn-primary { background-color: #3b82f6; border-color: #3b82f6; color: white; }

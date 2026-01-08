@@ -6,7 +6,7 @@
 <style>
 /* Modern Checkout Layout */
 .checkout-page {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #034f61 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 2rem 0;
 }
@@ -231,7 +231,7 @@
 }
 
 #card-element:focus-within {
-    border-color: #2563eb !important;
+    border-color: #034f61  !important;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
 }
 

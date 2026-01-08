@@ -5,7 +5,7 @@
 @section('content')
 <style>
 .plugin-hero {
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+    background: linear-gradient(135deg, #8b5cf6 0%, #034f61 50%, #6d28d9 100%);
     color: white;
     padding: 4rem 0;
     position: relative;
@@ -94,7 +94,7 @@
 
 .pricing-btn.active {
     background: white;
-    color: #7c3aed;
+    color: #034f61;
 }
 
 .price-display {
@@ -144,7 +144,7 @@
 .feature-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    background: linear-gradient(135deg, #8b5cf6, #034f61);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -260,7 +260,7 @@
 .testimonial-avatar {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    background: linear-gradient(135deg, #8b5cf6, #034f61);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -286,7 +286,7 @@
 
 .cta-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    background: linear-gradient(135deg, #8b5cf6, #034f61);
     color: white;
     text-align: center;
 }
@@ -406,7 +406,7 @@
 
 .btn-primary-plugin {
     background: white;
-    color: #7c3aed;
+    color: #034f61;
 }
 
 .btn-primary-plugin:hover {
@@ -422,7 +422,7 @@
 
 .btn-outline-plugin:hover {
     background: white;
-    color: #7c3aed;
+    color: #034f61;
 }
 
 @media (max-width: 768px) {

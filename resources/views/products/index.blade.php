@@ -42,7 +42,7 @@ foreach($products as $index => $product) {
 <style>
 /* Override and enhance styles specifically for this page */
 .hero-modern {
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%) !important;
+    background: linear-gradient(135deg, #8b5cf6 0%, #034f61 50%, #6d28d9 100%) !important;
     color: white !important;
     padding: 6rem 0 !important;
     min-height: 80vh !important;
@@ -198,7 +198,7 @@ foreach($products as $index => $product) {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+    background: linear-gradient(135deg, #8b5cf6, #034f61) !important;
     color: white !important;
     border-color: #8b5cf6 !important;
     transform: translateY(-1px) !important;
@@ -272,7 +272,7 @@ foreach($products as $index => $product) {
 .plugin-card .plugin-icon {
     width: 80px !important;
     height: 80px !important;
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+    background: linear-gradient(135deg, #8b5cf6, #034f61) !important;
     border-radius: 20px !important;
     display: flex !important;
     align-items: center !important;
@@ -305,7 +305,7 @@ foreach($products as $index => $product) {
 
 .plugin-card .btn-primary {
     width: 100% !important;
-    background: #3b82f6 !important;
+    background: #034f61 !important;
     color: white !important;
     padding: 0.75rem 1.5rem !important;
     border-radius: 8px !important;
@@ -317,12 +317,12 @@ foreach($products as $index => $product) {
 }
 
 .plugin-card .btn-primary:hover {
-    background: #2563eb !important;
+    background: #034f61 !important;
     transform: translateY(-1px) !important;
 }
 
 .cta-section {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+    background: linear-gradient(135deg, #8b5cf6, #034f61) !important;
     color: white !important;
     border-radius: 12px !important;
     padding: 3rem !important;
@@ -347,7 +347,7 @@ foreach($products as $index => $product) {
 
 .btn-light-hero {
     background: white !important;
-    color: #7c3aed !important;
+    color: #034f61 !important;
     border: none !important;
 }
 
@@ -359,7 +359,7 @@ foreach($products as $index => $product) {
 
 .btn-outline-hero:hover {
     background: white !important;
-    color: #7c3aed !important;
+    color: #034f61 !important;
 }
 
 /* Mobile Responsive */
@@ -460,9 +460,9 @@ foreach($products as $index => $product) {
                     <a href="#plugins" class="btn btn-primary">
                         <i class="fas fa-th-large"></i> Browse Plugins
                     </a>
-                    <a href="#" class="btn btn-outline">
+                    <?php /*<a href="#" class="btn btn-outline">
                         <i class="fas fa-play-circle"></i> Watch Demo
-                    </a>
+                    </a>*/ ?>
                 </div>
             </div>
             <div class="hero-icon">
@@ -568,10 +568,10 @@ foreach($products as $index => $product) {
         <h3 class="mb-3">Need Help Choosing the Right Plugin?</h3>
         <p class="mb-4">Our experts are here to help you find the perfect solution for your WordPress website.</p>
         <div class="d-flex justify-content-center gap-3">
-            <a href="#" class="btn btn-hero btn-light-hero">
+            <a href="{{ route('support.contact') }}" class="btn btn-hero btn-light-hero">
                 <i class="fas fa-headset me-2"></i>Get Expert Help
             </a>
-            <a href="#" class="btn btn-hero btn-outline-hero">
+            <a href="{{ route('support.contact') }}" class="btn btn-hero btn-outline-hero">
                 <i class="fas fa-comments me-2"></i>Live Chat
             </a>
         </div>

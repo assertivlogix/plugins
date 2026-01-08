@@ -97,7 +97,7 @@
 
 <style>
 .border-top-primary {
-    border-top: 4px solid #3b82f6 !important;
+    border-top: 4px solid #034f61 !important;
 }
 </style>
 @endsection

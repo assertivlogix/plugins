@@ -117,7 +117,7 @@
     <!-- Styles -->
     <style>
         :root {
-            --primary-color: #2563eb;
+            --primary-color: #034f61;
             --primary-dark: #1d4ed8;
             --secondary-color: #64748b;
             --accent-color: #f59e0b;
@@ -284,12 +284,12 @@
 
         .btn-primary {
             background: white;
-            color: #7c3aed;
+            color: #034f61;
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
         }
 
         .btn-primary:hover {
-            background: #f3f4f6;
+            background: #034f61;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
         }
@@ -302,13 +302,13 @@
 
         .btn-outline:hover {
             background: white;
-            color: #7c3aed;
+            color: #034f61;
             transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #034f61 0%, #764ba2 100%);
             color: white;
             padding: 6rem 0;
             text-align: center;
@@ -316,7 +316,7 @@
 
         /* Modern Hero Section */
         .hero-modern {
-            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+            background: linear-gradient(135deg, #8b5cf6 0%, #034f61 50%, #6d28d9 100%);
             color: white;
             padding: 6rem 0;
             min-height: 80vh;
@@ -434,7 +434,7 @@
             font-weight: 700;
             color: #8b5cf6;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            background: linear-gradient(135deg, #8b5cf6, #034f61);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -725,20 +725,20 @@
             }
 
             .nav-actions .btn-outline {
-                border: 2px solid #7c3aed;
-                color: #7c3aed;
+                border: 2px solid #034f61;
+                color: #034f61;
                 background: transparent;
             }
 
             .nav-actions .btn-outline:hover {
-                background: #7c3aed;
+                background: #034f61;
                 color: white;
             }
 
             .nav-actions .btn-primary {
-                background: #7c3aed;
+                background: #034f61;
                 color: white;
-                border: 2px solid #7c3aed;
+                border: 2px solid #034f61;
             }
 
             .nav-actions .btn-primary:hover {

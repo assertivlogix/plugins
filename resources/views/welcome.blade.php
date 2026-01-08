@@ -41,9 +41,9 @@ $schema = [
             <a href="{{ route('products.index') }}" class="btn btn-primary" style="background: white; color: var(--primary-color);">
                 <i class="fas fa-rocket"></i> Browse Plugins
             </a>
-            <a href="#" class="btn btn-outline" style="border-color: white; color: white;">
+            <?php /*<a href="#" class="btn btn-outline" style="border-color: white; color: white;">
                 <i class="fas fa-play-circle"></i> Watch Demo
-            </a>
+            </a>*/ ?>
         </div>
     </div>
 </section>

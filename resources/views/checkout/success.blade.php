@@ -5,7 +5,7 @@
 @push('styles')
 <style>
 .success-page {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #034f61 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 2rem 0;
 }
@@ -13,7 +13,7 @@
 .success-container {
     background: white;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(66, 0, 0, 0.1);
     overflow: hidden;
     max-width: 900px;
     margin: 0 auto;

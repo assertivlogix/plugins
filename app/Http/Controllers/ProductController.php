@@ -54,12 +54,12 @@ class ProductController extends Controller
         
         // Default color scheme based on category
         $colors = [
-            'security' => ['#8b5cf6', '#7c3aed', '#6d28d9', '#8b5cf6', '#7c3aed', '#10b981', '#059669'],
+            'security' => ['#8b5cf6', '#034f61', '#6d28d9', '#8b5cf6', '#034f61', '#10b981', '#059669'],
             'seo' => ['#10b981', '#059669', '#047857', '#10b981', '#059669', '#3b82f6', '#2563eb'],
             'backup' => ['#f59e0b', '#d97706', '#b45309', '#f59e0b', '#d97706', '#ef4444', '#dc2626'],
-            'performance' => ['#ef4444', '#dc2626', '#b91c1c', '#ef4444', '#dc2626', '#8b5cf6', '#7c3aed'],
+            'performance' => ['#ef4444', '#dc2626', '#b91c1c', '#ef4444', '#dc2626', '#8b5cf6', '#034f61'],
             'analytics' => ['#3b82f6', '#2563eb', '#1d4ed8', '#3b82f6', '#2563eb', '#10b981', '#059669'],
-            'management' => ['#8b5cf6', '#7c3aed', '#6d28d9', '#8b5cf6', '#7c3aed', '#f59e0b', '#d97706'],
+            'management' => ['#8b5cf6', '#034f61', '#6d28d9', '#8b5cf6', '#034f61', '#f59e0b', '#d97706'],
             'other' => ['#6b7280', '#4b5563', '#374151', '#6b7280', '#4b5563', '#3b82f6', '#2563eb']
         ];
         
